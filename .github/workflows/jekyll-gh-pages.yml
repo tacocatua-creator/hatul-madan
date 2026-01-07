@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Hatul Madan Shelter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ff9800; /* просто помаранчевий фон */
+            color: #fff;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .link {
+            display: block;
+            background: #ffffff;
+            color: #ff7a00;
+            text-decoration: none;
+            padding: 15px 20px;
+            margin: 12px 0;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .link:hover {
+            background: #ffe0b2;
+            transform: translateY(-3px);
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        /* Слайдер */
+        .slider {
+            margin: 30px 0;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            max-width: 100%;
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        .slide.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Hatul Madan Shelter</h1>
+
+    <!-- Слайдер фото -->
+    <div class="slider">
+        <img class="slide active" src="https://hatul-madan.org/static/fs/PXL_20231214_133531620.PORTRAIT.jpg" alt="Cat 1">
+        <img class="slide" src="https://hatul-madan.org/static/fs/PXL_20240611_132450659.PORTRAIT.jpg" alt="Cat 2">
+        <img class="slide" src="https://hatul-madan.org/static/fs/PXL_20240205_154236110.PORTRAIT.jpg" alt="Cat 3">
+    </div>
+
+    <!-- Посилання -->
+    <a class="link" href="https://t.me/hatulmadanphoto" target="_blank">📲 Telegram — звіти, чеки, життя, фото</a>
+    <a class="link" href="https://www.instagram.com/hatulmadanshelter?igsh=aDB2MDN4ZDdiYW5i&utm_source=qr" target="_blank">📸 Instagram</a>
+    <a class="link" href="https://www.facebook.com/share/14Ut3nfrNQW/?mibextid=wwXIfr" target="_blank">📘 Facebook</a>
+    <a class="link" href="https://send.monobank.ua/jar/3TeQwzVPRS" target="_blank">🏠 Банка на ремонт притулку</a>
+    <a class="link" href="https://send.monobank.ua/jar/29asDyJeJU" target="_blank">💊 Банка на ліки та потреби котиків</a>
+    <a class="link" href="https://hatul-madan.org/" target="_blank">🐱 Наш сайт — анкети котиків та кураторство</a>
+
+    <footer>
+        📍 Володимирська 82в, Київ | ⏰ 11:00 – 18:00
+    </footer>
+</div>
+
+<!-- Скрипт для слайдера -->
+<script>
+let slides = document.querySelectorAll('.slide');
+let currentSlide = 0;
+
+function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[index].classList.add('active');
+}
+
+// Автопрокрутка кожні 5 секунд
+setInterval(() => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+}, 5000);
+</script>
+
+</body>
+</html>
